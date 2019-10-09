@@ -13,7 +13,11 @@
 			<ComboBoxItem>Content03</ComboBoxItem>
 		</ComboBox>
 		<TabControl SelectedIndex="{Binding SelectedIndex, ElementName=combobox}">
-			<!-- ここで、ヘッダの非表示を行っている -->
+			<!-- 
+			ここで、ヘッダの非表示を行っている 
+			参考Url
+			http://yujiro15.net/blog/index.php?id=148
+			-->
 			<TabControl.Template>
 				<ControlTemplate TargetType="{x:Type TabControl}">
 					<ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" />
