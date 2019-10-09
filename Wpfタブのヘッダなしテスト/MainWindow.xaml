@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpfタブのヘッダなしテスト"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="300" Width="300" ResizeMode="NoResize">
+	<DockPanel>
+		<ComboBox x:Name="combobox" DockPanel.Dock="Bottom" SelectedIndex="0">
+			<ComboBoxItem>Content01</ComboBoxItem>
+			<ComboBoxItem>Content02</ComboBoxItem>
+			<ComboBoxItem>Content03</ComboBoxItem>
+		</ComboBox>
+		<TabControl SelectedIndex="{Binding SelectedIndex, ElementName=combobox}">
+			<TabControl.Template>
+				<ControlTemplate TargetType="{x:Type TabControl}">
+					<ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" />
+				</ControlTemplate>
+			</TabControl.Template>
+
+			<TabItem>
+				<CheckBox Content="こけこっこ" />
+			</TabItem>
+
+			<TabItem>
+				<TextBlock Text="こけこっこ2" />
+			</TabItem>
+
+			<TabItem>
+				<TextBlock Text="こけこっこ3" />
+			</TabItem>
+		</TabControl>
+	</DockPanel>
 </Window>
